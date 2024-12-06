@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superstore Services</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        /* Reset margins and padding */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Lighter background for the page */
+        }
+
+        /* Title styling */
+        .title-animation {
+            text-align: center;
+            color: #2196F3;
+            margin-top: 30px;
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: slideIn 2s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Service Boxes container */
+        .service-boxes {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Individual service box styling */
+        .service-box {
+            width: 250px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-box:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+            background-color: #f1f1f1;
+        }
+
+        .service-box i {
+    font-size: 50px;  /* Increased size for better visibility */
+    color: #2196F3;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.service-box:hover i {
+    transform: scale(1.2);
+}
+
+        .service-box h3 {
+            margin: 15px 0;
+            color: #333;
+            font-size: 1.7em;
+            font-weight: bold;
+        }
+
+        .service-box p {
+            color: #666;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .service-box:hover p {
+            color: #2196F3;
+        }
+
+        /* Discount/Offer labels */
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #FF4081, #FF8C00);
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.3em;
+            border-radius: 25px;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sale and Discount Section */
+        .sale-section {
+            display: flex;
+            justify-content: center; /* Align all items in a row */
+            align-items: center;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #FF4081;
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .sale-section:hover {
+            background-color: #FF5722;
+        }
+
+        .sale-info {
+            text-align: center;
+            margin: 0 10px; /* Add margin between each sale info box */
+        }
+
+        .sale-info h2 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .sale-info p {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .sale-info .discount-tag {
+            font-size: 2.5em;
+            color: #FFEB3B;
+            font-weight: bold;
+        }
+
+        /* Call to Action button */
+        .btn-sale {
+            padding: 12px 25px;
+            background-color: #2196F3;
+            border: none;
+            color: white;
+            font-size: 1.4em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-sale:hover {
+            background-color: #1976D2;
+            transform: scale(1.1);
+        }
+        .back-home {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #2196F3;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #2196F3;
+            border-radius: 5px;
+        }
+
+        .back-home:hover {
+            background-color: black;
+            color: white;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <!-- Title -->
+    <a href="/" class="back-home">Back to Home Page</a>
+    <h1 class="title-animation">Christmas Sales Are Here</h1>
+    
+    
+    <!-- Sale and Discount Section -->
+    <div class="sale-section">
+        <!-- Each sale-info is placed in a horizontal line now -->
+        <div class="sale-info">
+            <h2>Superstore Sale!</h2>
+            <p>Get amazing discounts across various categories</p>
+            <p class="discount-tag">Up to <strong>50% OFF</strong> on Selected Items!</p>
+            <button class="btn-sale">Shop Now</button>
+        </div>
+        <div class="sale-info">
+            <h2>Seasonal Discounts</h2>
+            <p>Exclusive offers for the season's end</p>
+            <p class="discount-tag">Save <strong>30%</strong> on Seasonal Products</p>
+            <button class="btn-sale">Shop Now</button>
+        </div>
+        <div class="sale-info">
+            <h2>Flash Deals</h2>
+            <p>Limited time offers</p>
+            <p class="discount-tag">Hurry! Up to <strong>70% OFF</strong> Today!</p>
+            <button class="btn-sale">Shop Now</button>
+        </div>
+    </div>
+
+    <!-- Service Boxes -->
+    <div class="service-boxes">
+        <!-- Grocery Box -->
+        <div class="service-box">
+            <div class="discount-badge">10% OFF</div>
+            <i class="fa fa-apple"></i>
+            <h3>Grocery</h3>
+            <p>Fresh groceries delivered to your doorstep with a wide selection of products.</p>
+        </div>
+
+        <!-- Clothing Box -->
+        <div class="service-box">
+            <div class="discount-badge">15% OFF</div>
+            <i class="fas fa-hat-wizard"></i>
+            <h3>Clothing</h3>
+            <p>Explore the latest trends in fashion with our extensive clothing collection.</p>
+        </div>
+
+        <!-- Beauty Box -->
+        <div class="service-box">
+            <div class="discount-badge">20% OFF</div>
+            <i class="fa fa-heart"></i>
+            <h3>Beauty</h3>
+            <p>Discover top beauty products and accessories to enhance your look.</p>
+        </div>
+    </div>
+
+</body>
+</html>
